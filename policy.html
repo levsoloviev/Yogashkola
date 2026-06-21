@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Политика конфиденциальности — Лев Соловьев</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://yogashkola.com/policy">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+
+
+/* ─── TOKENS ─────────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:       #0c0b09;
+  --surface:  #111009;
+  --ink:      #e8e2d8;
+  --muted:    #7a7468;
+  --faint:    #3d3930;
+  --gold:     #b89a5c;
+  --gold-hi:  #c9ad72;
+  --border:   #1e1c18;
+  --serif:    'Cormorant Garamond', Georgia, serif;
+  --sans:     'Jost', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+
+/* ─── NAV ─────────────────────────────────────── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  padding: 28px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: transparent;
+  transition: background 0.5s, border-color 0.5s;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+  background: rgba(12,11,9,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom-color: var(--border);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1rem; font-style: italic; font-weight: 400;
+  letter-spacing: 0.06em; color: var(--ink);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-cta {
+  font-family: var(--sans);
+  font-size: 0.6rem; font-weight: 400;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none;
+  border: 1px solid rgba(184,154,92,0.3);
+  padding: 10px 22px;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.nav-cta:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+
+/* ─── HERO ────────────────────────────────────── */
+.hero {
+  min-height: 100svh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset:0;
+  background-size: cover; background-position: center;
+  opacity: 0.32;
+  filter: saturate(0.65) brightness(0.85);
+  z-index: 0;
+}
+.hero-bg::after {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(to bottom, rgba(12,11,9,0.55) 0%, transparent 25%, transparent 65%, var(--bg) 100%);
+}
+.hero-content { position: relative; z-index:1; max-width: 720px; margin: 0 auto; }
+
+.hero-provenance {
+  font-family: var(--sans);
+  font-size: 0.58rem; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 48px;
+  animation: fadeIn 1.2s ease both;
+}
+
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 300; line-height: 0.95;
+  letter-spacing: -0.01em; color: var(--ink);
+  margin-bottom: 32px;
+  animation: fadeIn 1.2s 0.2s ease both;
+}
+.hero-h1 em { font-style: italic; color: var(--gold); }
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-style: italic; font-weight: 300;
+  color: var(--muted); line-height: 1.7;
+  max-width: 520px; margin: 0 auto 52px;
+  animation: fadeIn 1.2s 0.4s ease both;
+}
+
+.hero-actions {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 16px;
+  animation: fadeIn 1.2s 0.6s ease both;
+}
+
+/* ─── BUTTONS ─────────────────────────────────── */
+.btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.62rem; font-weight: 400;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  text-decoration: none; color: var(--bg);
+  background: var(--gold); padding: 16px 48px;
+  transition: background 0.25s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold-hi); }
+
+.btn-ghost {
+  font-family: var(--sans);
+  font-size: 0.6rem; font-weight: 300;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: color 0.2s; background: none; border: none;
+  cursor: pointer;
+}
+.btn-ghost:hover { color: var(--ink); }
+
+.breathe {
+  margin-top: 64px;
+  font-family: var(--sans);
+  font-size: 0.55rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--faint);
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* ─── RULE ────────────────────────────────────── */
+.rule { height: 1px; background: var(--border); margin: 0; }
+
+/* ─── SECTION ─────────────────────────────────── */
+.section { padding: 96px 48px; max-width: 960px; margin: 0 auto; }
+.section--wide { max-width: 1160px; }
+.section--centered { text-align: center; }
+
+/* ─── EYEBROW ────────────────────────────────── */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 24px; opacity: 0.8;
+}
+
+/* ─── HEADINGS ───────────────────────────────── */
+.h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 300; line-height: 1.1;
+  color: var(--ink); margin-bottom: 24px;
+}
+.h2 em { font-style: italic; color: var(--gold); }
+
+/* ─── BODY TEXT ──────────────────────────────── */
+.body {
+  font-size: 1.08rem; font-weight: 300;
+  color: var(--muted); line-height: 1.9; max-width: 600px;
+}
+.body strong { color: var(--ink); font-weight: 400; }
+.body + .body { margin-top: 18px; }
+
+/* ─── INTRO GRID ─────────────────────────────── */
+.intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+
+/* ─── STATS ──────────────────────────────────── */
+.stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); margin-top: 48px;
+}
+.stat {
+  background: var(--surface); padding: 28px 24px;
+  border-top: 1px solid rgba(184,154,92,0.25);
+}
+.stat-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.9rem; font-weight: 300; font-style: italic;
+  color: var(--gold); line-height: 1; margin-bottom: 6px;
+}
+.stat-label {
+  font-family: var(--sans);
+  font-size: 0.78rem; font-weight: 300;
+  color: var(--muted); line-height: 1.3; letter-spacing: 0;
+}
+
+/* ─── APP STORE ──────────────────────────────── */
+.appstore-block { margin-top: 40px; }
+.appstore-block img {
+  width: 100%; border: 1px solid var(--border);
+  filter: brightness(0.88) saturate(0.7);
+}
+.caption {
+  font-family: var(--sans);
+  font-size: 0.8rem; font-weight: 300;
+  letter-spacing: 0.04em; color: var(--muted);
+  margin-top: 14px;
+}
+
+/* ─── GIFTS IMAGE ────────────────────────────── */
+.gifts-img { position: relative; line-height: 0; margin: 56px 0 0; }
+.gifts-img img {
+  width: 100%;
+  filter: brightness(0.92) saturate(0.75);
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, black 10%, black 62%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, black 10%, black 62%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-composite: source-in;
+}
+
+/* ─── RESOURCES ──────────────────────────────── */
+.resources { margin-top: 16px; }
+.resource {
+  display: grid; grid-template-columns: 56px 1fr;
+  border-bottom: 1px solid var(--border); padding: 32px 0;
+}
+.resource:first-child { border-top: 1px solid var(--border); }
+.resource-num {
+  font-family: var(--serif);
+  font-size: 2rem; font-weight: 300; font-style: italic;
+  color: var(--gold); opacity: 0.45; line-height: 1; padding-top: 3px;
+}
+.resource-cat {
+  font-family: var(--sans);
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.75; display: block; margin-bottom: 6px;
+}
+.resource-title {
+  font-family: var(--serif);
+  font-size: 1.15rem; font-weight: 400;
+  color: var(--ink); line-height: 1.3; margin-bottom: 8px;
+}
+.resource-desc { font-size: 1rem; color: var(--muted); line-height: 1.8; }
+.resource-img { grid-column: 2 / 3; padding-top: 20px; }
+.resource-img img {
+  width: 100%; filter: brightness(0.9) saturate(0.75); border-radius: 4px;
+}
+
+/* ─── CTA SECTION ────────────────────────────── */
+.cta-section {
+  padding: 120px 48px; text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  scroll-margin-top: 0;
+}
+.cta-section .h2 { margin-bottom: 16px; }
+.cta-section .body { margin: 0 auto 48px; }
+
+/* ─── BIO ────────────────────────────────────── */
+.bio-grid {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 72px; align-items: start;
+}
+.bio-portrait-wrap { position: sticky; top: 120px; }
+.bio-portrait {
+  width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%;
+  filter: grayscale(20%) brightness(0.88);
+  border: 1px solid var(--border); margin-bottom: 20px;
+}
+.bio-name {
+  font-family: var(--serif); font-size: 1.1rem; font-style: italic;
+  color: var(--ink); text-align: center;
+}
+.bio-role {
+  font-family: var(--sans); font-size: 0.58rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); text-align: center; margin-top: 6px;
+}
+
+/* ─── PHOTO GRID ─────────────────────────────── */
+.photo-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 48px;
+}
+.photo-grid img {
+  width: 100%; aspect-ratio: 3/2; object-fit: cover;
+  filter: grayscale(15%) brightness(0.78) saturate(0.7);
+  transition: filter 0.5s;
+}
+.photo-grid img:hover { filter: grayscale(5%) brightness(0.9) saturate(0.85); }
+
+/* ─── FOOTER ─────────────────────────────────── */
+footer {
+  padding: 52px 48px;
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: space-between;
+  gap: 16px 40px;
+  border-top: 1px solid var(--border);
+}
+.footer-name { font-family: var(--serif); font-size: 1rem; font-style: italic; color: var(--muted); }
+.footer-name span { color: var(--gold); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 6px 24px; }
+.footer-links a {
+  font-family: var(--sans); font-size: 0.6rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--faint); text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--muted); }
+.footer-legal {
+  width: 100%; font-family: var(--sans); font-size: 0.62rem;
+  color: var(--faint); line-height: 1.7; margin-top: 4px;
+}
+.footer-legal a { color: var(--faint); text-decoration: underline; }
+
+/* ─── STICKY ─────────────────────────────────── */
+.sticky-cta {
+  position: fixed; bottom:0; left:0; right:0; z-index:200;
+  background: rgba(12,11,9,0.97);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  padding: 14px 20px;
+  padding-bottom: max(14px, env(safe-area-inset-bottom));
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.sticky-cta.is-visible { transform: translateY(0); }
+.sticky-cta .btn { width: 100%; text-align: center; display: block; padding: 14px; }
+@media(min-width:768px) { .sticky-cta { display: none; } }
+
+/* ─── REVEAL ─────────────────────────────────── */
+.reveal {
+  opacity:0; transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.is-visible { opacity:1; transform:none; }
+
+/* ─── KEYFRAMES ──────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(16px); }
+  to   { opacity:1; transform:none; }
+}
+@keyframes breathe {
+  0%,100% { opacity: 0.2; letter-spacing: 0.28em; }
+  50%      { opacity: 0.6; letter-spacing: 0.38em; }
+}
+
+
+/* ─── TESTIMONIAL QUOTE ─────────────────────── */
+.testimonial-intro {
+  font-size: 1.08rem; font-weight: 300;
+  color: var(--muted); line-height: 1.9;
+  max-width: 600px; margin: 0 auto 32px;
+  text-align: center;
+}
+.testimonial-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 48px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+.testimonial-mark {
+  font-family: var(--serif);
+  font-size: 4.5rem;
+  font-style: italic;
+  color: var(--gold);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: block;
+}
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.testimonial-author {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.testimonial-author::before {
+  content: '— ';
+}
+
+@media(max-width:768px) {
+  .testimonial-block { padding: 36px 24px; }
+  .testimonial-mark { font-size: 3.5rem; }
+  .testimonial-text { font-size: 1.1rem; line-height: 1.65; }
+  .testimonial-intro { font-size: 1.02rem; }
+}
+
+
+/* ─── BLOG SECTION ───────────────────────────── */
+.blog-section {
+  padding: 96px 0 0;
+  text-align: center;
+}
+.blog-intro {
+  font-size: 1.08rem; font-weight: 300;
+  color: var(--muted); line-height: 1.85;
+  max-width: 560px; margin: 0 auto 12px;
+}
+.blog-link {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184,154,92,0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.blog-link:hover { color: var(--gold-hi); border-color: var(--gold-hi); }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+.blog-grid img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  filter: grayscale(10%) brightness(0.82) saturate(0.8);
+  transition: filter 0.5s;
+  display: block;
+}
+.blog-grid img:hover { filter: grayscale(0%) brightness(0.95) saturate(1); }
+
+.blog-cta {
+  margin-top: 48px;
+  padding-bottom: 96px;
+}
+
+@media(max-width:768px) {
+  .blog-section { padding: 56px 0 0; }
+  .blog-intro { font-size: 1.02rem; padding: 0 20px; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); margin-top: 32px; }
+  .blog-cta { margin-top: 36px; padding-bottom: 56px; }
+}
+
+/* ─── MOBILE ─────────────────────────────────── */
+@media(max-width:768px) {
+  nav { padding: 18px 20px; }
+  .nav-cta { display: none; }
+  .hero { padding: 96px 20px 56px; }
+  .hero-h1 { font-size: clamp(2.2rem, 10vw, 3.2rem); line-height: 1.0; }
+  .hero-tagline { font-size: 1.05rem; line-height: 1.7; max-width: 100%; }
+  .section { padding: 56px 20px; }
+  .eyebrow { font-size: 0.62rem; margin-bottom: 16px; }
+  .h2 { font-size: clamp(1.65rem, 6vw, 2.2rem); margin-bottom: 16px; }
+  .body { font-size: 1.05rem; line-height: 1.85; max-width: 100%; }
+  .intro-grid { grid-template-columns: 1fr; gap: 36px; }
+  .stats { grid-template-columns: 1fr 1fr; margin-top: 28px; }
+  .stat { padding: 16px 12px; }
+  .stat-num { font-size: 1.4rem; margin-bottom: 5px; }
+  .stat-label { font-size: 0.72rem; line-height: 1.3; }
+  .caption { font-size: 0.82rem !important; }
+  .gifts-img { margin: 40px 0 0; }
+  .resource { grid-template-columns: 40px 1fr; padding: 20px 0; gap: 0 12px; }
+  .resource-num { font-size: 1.5rem; }
+  .resource-cat { font-size: 0.6rem; }
+  .resource-title { font-size: 1.05rem; line-height: 1.3; margin-bottom: 6px; }
+  .resource-desc { font-size: 0.98rem; line-height: 1.75; }
+  .resource-img { grid-column: 2/3; padding-top: 14px; }
+  .cta-section { padding: 64px 20px; }
+  .cta-section .h2 { font-size: clamp(1.65rem, 6vw, 2.2rem); }
+  .cta-section .body { font-size: 1rem; }
+  .btn { padding: 16px 36px; font-size: 0.65rem; }
+  .bio-grid { grid-template-columns: 1fr; gap: 32px; }
+  .bio-portrait-wrap { position: static; display: flex; align-items: center; gap: 16px; }
+  .bio-portrait { width: 68px; height: 68px; flex-shrink: 0; margin-bottom: 0; }
+  .bio-name { font-size: 1rem; text-align: left; }
+  .bio-role { font-size: 0.6rem; text-align: left; }
+  .photo-grid { gap: 2px; margin-top: 32px; }
+  .photo-grid img { aspect-ratio: 4/3; }
+  footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .footer-links { gap: 8px 14px; }
+  .footer-links a { font-size: 0.62rem; }
+  .footer-legal { font-size: 0.65rem; line-height: 1.65; }
+}
+@media(max-width:390px) {
+  .hero-h1 { font-size: 2rem; }
+  .h2 { font-size: 1.5rem; }
+  .body { font-size: 1rem; }
+  .resource-desc { font-size: 0.94rem; }
+  .stat-num { font-size: 1.2rem; }
+  .stat-label { font-size: 0.68rem; }
+}
+
+  
+
+  /* ─── LEGAL DOCUMENT PAGE ─── */
+  .legal-hero {
+    padding: 140px 40px 64px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .legal-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.58rem; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 24px;
+  }
+  .legal-h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .legal-h1 em { font-style: italic; color: var(--gold); }
+  .legal-date {
+    font-family: var(--serif);
+    font-size: 1rem; font-style: italic; font-weight: 300;
+    color: var(--muted);
+  }
+
+  .legal-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 40px 120px;
+  }
+  .legal-section {
+    margin-bottom: 52px;
+  }
+  .legal-section:last-child { margin-bottom: 0; }
+  .legal-section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: var(--serif);
+    font-size: 1.5rem; font-weight: 400; font-style: italic;
+    color: var(--gold);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .legal-section h2 .sec-num {
+    font-family: var(--sans);
+    font-size: 0.7rem; font-style: normal; font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+  }
+  .legal-section h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem; font-weight: 400; font-style: italic;
+    color: var(--ink);
+    margin: 28px 0 14px;
+  }
+  .legal-section h3:first-of-type { margin-top: 4px; }
+  .legal-section p {
+    font-size: 1.05rem; font-weight: 300;
+    color: var(--ink); line-height: 1.85;
+    margin-bottom: 16px;
+  }
+  .legal-section p:last-child { margin-bottom: 0; }
+  .legal-section p strong { color: var(--gold); font-weight: 400; }
+
+  .legal-list {
+    list-style: none;
+    margin: 0 0 16px;
+  }
+  .legal-list li {
+    position: relative;
+    font-size: 1.05rem; font-weight: 300;
+    color: var(--ink); line-height: 1.8;
+    padding-left: 24px;
+    margin-bottom: 12px;
+  }
+  .legal-list li:last-child { margin-bottom: 0; }
+  .legal-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 11px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.7;
+  }
+
+  .legal-contacts {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px 36px;
+  }
+  .legal-contacts p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  .legal-contacts p:last-child { margin-bottom: 0; }
+  .legal-contacts a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184,154,92,0.3);
+  }
+  .legal-contacts a:hover { border-color: var(--gold); }
+
+  /* ─── TOC ─── */
+  .legal-toc {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px 64px;
+  }
+  .legal-toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .legal-toc-grid a {
+    display: flex;
+    gap: 10px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    text-decoration: none;
+    line-height: 1.6;
+    transition: color 0.2s;
+  }
+  .legal-toc-grid a:hover { color: var(--gold); }
+  .legal-toc-grid a span {
+    color: var(--gold);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  @media(max-width:768px) {
+    .legal-hero { padding: 100px 20px 48px; }
+    .legal-h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+    .legal-body { padding: 48px 20px 80px; }
+    .legal-toc { padding: 0 20px 40px; }
+    .legal-toc-grid { grid-template-columns: 1fr; }
+    .legal-section { margin-bottom: 40px; }
+    .legal-section h2 { font-size: 1.25rem; }
+    .legal-section h3 { font-size: 1.02rem; }
+    .legal-section p, .legal-list li { font-size: 0.98rem; line-height: 1.75; }
+    .legal-contacts { padding: 24px 24px; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="https://yogashkola.com/">Лев <span>Соловьев</span></a>
+</nav>
+
+<!-- ── HEADER ── -->
+<section class="legal-hero">
+  <p class="legal-eyebrow">Юридический документ</p>
+  <h1 class="legal-h1">Политика <em>конфиденциальности</em></h1>
+  <p class="legal-date">и обработки персональных данных</p>
+</section>
+
+<!-- ── TABLE OF CONTENTS ── -->
+<div class="legal-toc">
+  <div class="legal-toc-grid">
+    <a href="#s1"><span>01</span> Общие положения</a>
+    <a href="#s2"><span>02</span> Оператор персональных данных</a>
+    <a href="#s3"><span>03</span> Какие данные обрабатываются</a>
+    <a href="#s4"><span>04</span> Цели обработки данных</a>
+    <a href="#s5"><span>05</span> Правовые основания обработки</a>
+    <a href="#s6"><span>06</span> Передача данных третьим лицам</a>
+    <a href="#s7"><span>07</span> Отчёты об ошибках приложений</a>
+    <a href="#s8"><span>08</span> Срок хранения данных</a>
+    <a href="#s9"><span>09</span> Защита информации</a>
+    <a href="#s10"><span>10</span> Права пользователя</a>
+    <a href="#s11"><span>11</span> Изменение Политики</a>
+    <a href="#s12"><span>12</span> Контактная информация</a>
+  </div>
+</div>
+
+<!-- ── BODY ── -->
+<div class="legal-body">
+
+  <div class="legal-section" id="s1">
+    <h2><span class="sec-num">01</span> Общие положения</h2>
+    <p>Настоящая Политика конфиденциальности и обработки персональных данных (далее — «Политика») определяет порядок получения, использования, хранения и защиты информации о пользователях проекта «Йогашкола» (Yogashkola).</p>
+    <p>Политика применяется к:</p>
+    <ul class="legal-list">
+      <li>сайту Yogashkola;</li>
+      <li>образовательным программам и материалам;</li>
+      <li>закрытым сообществам в Telegram;</li>
+      <li>мобильным приложениям проекта;</li>
+      <li>страницам оплаты;</li>
+      <li>иным сервисам и ресурсам, используемым в рамках деятельности проекта.</li>
+    </ul>
+    <p>Использование сайта, мобильных приложений, участие в программах, оплата услуг, вступление в сообщество либо иное взаимодействие с проектом означает согласие пользователя с настоящей Политикой.</p>
+  </div>
+
+  <div class="legal-section" id="s2">
+    <h2><span class="sec-num">02</span> Оператор персональных данных</h2>
+    <p>Оператором персональных данных является:</p>
+    <div class="legal-contacts">
+      <p><strong>Соловьев Лев Сергеевич</strong></p>
+      <p>Email: <a href="mailto:lev@yogashkola.com">lev@yogashkola.com</a></p>
+    </div>
+    <p style="margin-top:16px;">Далее по тексту — «Оператор».</p>
+  </div>
+
+  <div class="legal-section" id="s3">
+    <h2><span class="sec-num">03</span> Какие данные могут обрабатываться</h2>
+    <p>В зависимости от способа взаимодействия пользователя с проектом могут обрабатываться следующие сведения.</p>
+
+    <h3>3.1. При обращении к Оператору</h3>
+    <p>Пользователь может добровольно предоставить:</p>
+    <ul class="legal-list">
+      <li>имя;</li>
+      <li>адрес электронной почты;</li>
+      <li>номер телефона;</li>
+      <li>содержание сообщений и обращений;</li>
+      <li>иную информацию, которую пользователь самостоятельно сообщает Оператору.</li>
+    </ul>
+
+    <h3>3.2. При оплате услуг</h3>
+    <p>Для оформления и подтверждения оплаты могут обрабатываться:</p>
+    <ul class="legal-list">
+      <li>имя и фамилия;</li>
+      <li>адрес электронной почты;</li>
+      <li>сведения о платеже;</li>
+      <li>информация, необходимая для подтверждения факта оплаты.</li>
+    </ul>
+    <p>Оператор не получает и не хранит данные банковских карт пользователей.</p>
+    <p>Обработка платёжной информации осуществляется соответствующими платёжными сервисами в соответствии с их собственными правилами и политиками конфиденциальности.</p>
+
+    <h3>3.3. При участии в Telegram-сообществе</h3>
+    <p>После вступления пользователя в закрытое сообщество Telegram Оператор может видеть информацию, которую пользователь самостоятельно сделал доступной в своём профиле Telegram, включая:</p>
+    <ul class="legal-list">
+      <li>имя;</li>
+      <li>фамилию;</li>
+      <li>имя пользователя (username);</li>
+      <li>фотографию профиля;</li>
+      <li>сообщения пользователя;</li>
+      <li>иную информацию, доступную в соответствии с настройками конфиденциальности Telegram.</li>
+    </ul>
+    <p>Оператор получает доступ только к той информации, которая доступна участникам сообщества в соответствии с настройками Telegram.</p>
+
+    <h3>3.4. При использовании мобильных приложений</h3>
+    <p>Мобильные приложения проекта не требуют регистрации и создания учётной записи.</p>
+    <p>Для использования приложений пользователю не требуется предоставлять имя, адрес электронной почты, номер телефона либо иные персональные данные.</p>
+
+    <h3>3.5. Техническая информация</h3>
+    <p>В целях обеспечения стабильной работы сервисов может автоматически обрабатываться техническая информация, включая:</p>
+    <ul class="legal-list">
+      <li>тип устройства;</li>
+      <li>версию операционной системы;</li>
+      <li>версию приложения;</li>
+      <li>технические журналы работы;</li>
+      <li>сведения о программных ошибках и сбоях.</li>
+    </ul>
+  </div>
+
+  <div class="legal-section" id="s4">
+    <h2><span class="sec-num">04</span> Цели обработки данных</h2>
+    <p>Персональные данные могут использоваться для следующих целей:</p>
+    <ul class="legal-list">
+      <li>предоставление доступа к услугам и материалам;</li>
+      <li>обработка и подтверждение платежей;</li>
+      <li>предоставление доступа к закрытым сообществам;</li>
+      <li>коммуникация с пользователями;</li>
+      <li>ответы на обращения пользователей;</li>
+      <li>исполнение обязательств по заключённым договорам;</li>
+      <li>обеспечение безопасности сервисов;</li>
+      <li>выявление и устранение технических ошибок;</li>
+      <li>улучшение качества оказываемых услуг;</li>
+      <li>соблюдение требований законодательства.</li>
+    </ul>
+  </div>
+
+  <div class="legal-section" id="s5">
+    <h2><span class="sec-num">05</span> Правовые основания обработки данных</h2>
+    <p>Обработка персональных данных осуществляется на основании:</p>
+    <ul class="legal-list">
+      <li>согласия пользователя;</li>
+      <li>исполнения договора либо публичной оферты;</li>
+      <li>законных интересов Оператора, связанных с обеспечением деятельности проекта;</li>
+      <li>требований применимого законодательства.</li>
+    </ul>
+  </div>
+
+  <div class="legal-section" id="s6">
+    <h2><span class="sec-num">06</span> Передача данных третьим лицам</h2>
+    <p>Оператор не продаёт и не передаёт персональные данные пользователей третьим лицам без законных оснований.</p>
+    <p>При этом отдельные данные могут обрабатываться следующими сервисами в объёме, необходимом для их функционирования:</p>
+    <ul class="legal-list">
+      <li>Telegram;</li>
+      <li>Google Play;</li>
+      <li>Apple App Store;</li>
+      <li>Tribute и используемые им платёжные провайдеры;</li>
+      <li>сервисы хостинга;</li>
+      <li>сервисы электронной почты;</li>
+      <li>Firebase Crashlytics либо аналогичные сервисы диагностики и обеспечения работоспособности приложений.</li>
+    </ul>
+    <p>Каждый из указанных сервисов самостоятельно определяет порядок обработки информации в рамках собственных правил и политик конфиденциальности.</p>
+  </div>
+
+  <div class="legal-section" id="s7">
+    <h2><span class="sec-num">07</span> Отчёты об ошибках мобильных приложений</h2>
+    <p>Для выявления и устранения технических неисправностей мобильных приложений могут использоваться автоматизированные средства диагностики ошибок, включая Firebase Crashlytics.</p>
+    <p>Указанные сервисы могут автоматически получать техническую информацию об устройстве пользователя и сведения о сбоях приложения.</p>
+    <p>Такая информация используется исключительно для обеспечения стабильной работы приложений и устранения технических неисправностей.</p>
+  </div>
+
+  <div class="legal-section" id="s8">
+    <h2><span class="sec-num">08</span> Срок хранения данных</h2>
+    <p>Персональные данные хранятся не дольше, чем это необходимо для достижения целей их обработки, исполнения договорных обязательств либо соблюдения требований законодательства.</p>
+    <p>После достижения соответствующих целей данные подлежат удалению либо обезличиванию, если их дальнейшее хранение не требуется в соответствии с законодательством.</p>
+  </div>
+
+  <div class="legal-section" id="s9">
+    <h2><span class="sec-num">09</span> Защита информации</h2>
+    <p>Оператор принимает разумные организационные и технические меры для защиты информации от неправомерного доступа, уничтожения, изменения, блокирования, копирования, распространения и иных неправомерных действий.</p>
+    <p>При этом ни один способ передачи информации через сеть Интернет не может гарантировать абсолютную безопасность данных.</p>
+  </div>
+
+  <div class="legal-section" id="s10">
+    <h2><span class="sec-num">10</span> Права пользователя</h2>
+    <p>Пользователь вправе:</p>
+    <ul class="legal-list">
+      <li>получать информацию об обработке своих данных;</li>
+      <li>запрашивать уточнение данных;</li>
+      <li>требовать удаления данных при отсутствии законных оснований для их дальнейшей обработки;</li>
+      <li>отзывать согласие на обработку данных;</li>
+      <li>обращаться к Оператору по вопросам обработки персональных данных.</li>
+    </ul>
+    <p>Для реализации указанных прав пользователь может направить обращение по адресу электронной почты, указанному в настоящей Политике.</p>
+  </div>
+
+  <div class="legal-section" id="s11">
+    <h2><span class="sec-num">11</span> Изменение Политики</h2>
+    <p>Оператор вправе в любое время изменять настоящую Политику.</p>
+    <p>Новая редакция вступает в силу с момента её публикации на сайте, если иное не предусмотрено новой редакцией.</p>
+    <p>Пользователю рекомендуется периодически знакомиться с актуальной редакцией Политики.</p>
+  </div>
+
+  <div class="legal-section" id="s12">
+    <h2><span class="sec-num">12</span> Контактная информация</h2>
+    <div class="legal-contacts">
+      <p><strong>Соловьев Лев Сергеевич</strong></p>
+      <p>Email: <a href="mailto:lev@yogashkola.com">lev@yogashkola.com</a></p>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:64px; font-family:var(--sans); font-size:0.7rem; letter-spacing:0.08em; color:var(--faint);">
+    Дата публикации: 20 июня 2026 года
+  </p>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer role="contentinfo">
+  <p class="footer-name">Лев <span>Соловьев</span></p>
+  <div class="footer-links">
+    <a href="https://yogashkola.com/offer">Публичная оферта</a>
+    <a href="https://yogashkola.com/policy">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<script>
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive:true});
+
+  // Reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.07, rootMargin: '0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Sticky CTA
+  const hero = document.getElementById('hero');
+  const sticky = document.getElementById('stickyCta');
+  if (hero && sticky) {
+    new IntersectionObserver(([e]) => {
+      sticky.classList.toggle('is-visible', !e.isIntersecting);
+    }, {threshold:0}).observe(hero);
+  }
+
+</script>
+
+</body>
+</html>
